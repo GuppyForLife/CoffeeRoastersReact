@@ -22,7 +22,7 @@ const Home = () => {
                 <div className="card-img-overlay">
                     <h1 className="card-title display-1 home-jumbotron-header">Great coffee made simple.</h1>
                     <p className="card-text home-jumbotron-text">Start your mornings with the world's best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
-                    <a className=" btn btn-info text-white ">Create your plan</a>
+                    <button type="button" className="button home-jumbotron-button">Create your plan</button>
                 </div>
             </div>
             <div className=" container-fluid">
@@ -68,6 +68,39 @@ const Home = () => {
                             <h5 className=" choose-us-col-header">Free shipping</h5>
                             <p className=" choose-us-col-par">We cover the cost and coffee is delivered fast. Peak freshness: guaranteed.</p> 
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div className=" container-fluid" >
+                <div className="row howitworks-row">
+                    <h5>How it works</h5>
+                </div>
+                <div className="row g-0 howitworks-row2">
+                    <div className="col-md">
+                        <span className="dot"></span>
+                        <div className="h-line"></div>
+                        <h1 className=" display-3 howitworks-num">01</h1>
+                        <h2 className=" howitworks-header">Pick your coffee</h2>
+                        <p className=" howitworks-par">Select from our evolving range of artisan coffees. Our beans are ethically sourced and we pay fair prices for them. There are new coffees in all profiles every month for you to try out.</p>
+                    </div>
+                    <div className="col-md">
+                        <span className="dot"></span>
+                        <div className="h-line"></div>
+                        <h1 className=" display-3 howitworks-num">02</h1>
+                        <h2 className=" howitworks-header">Choose the frequency</h2>
+                        <p className=" howitworks-par">Customize your order frequency, quantity, even your roast style and grind type. Pause, skip, or cancel your subscription with no commitment through our online portal.</p>
+                    </div>
+                    <div className="col-md">
+                        <span className="dot"></span>
+                        <div className=" emptySpaceFor3"></div>
+                        <h1 className=" display-3 howitworks-num">03</h1>
+                        <h2 className=" howitworks-header">Receive and enjoy!</h2>
+                        <p className=" howitworks-par">We ship your package within 48 hours, freshly roasted. Sit back and enjoy award-winning word-class coffees curated to provide a distinct tasting experience.</p>
+                    </div>
+                </div>
+                <div className="row choose-us-card-row">
+                    <div className=" col-md-3">
+                        <button type="button" className="button">Create your plan</button>
                     </div>
                 </div>
             </div>
