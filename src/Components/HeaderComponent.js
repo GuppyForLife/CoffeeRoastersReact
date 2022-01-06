@@ -20,7 +20,7 @@ class Header extends Component {
 
     render(){
         return(
-            <div className='container header' style={{'padding-top':'1%', 'padding-bottom':'1%'}}>
+            <div className='container header' >
             <Navbar light expand='md'>
                 <NavbarBrand>
                     <img src="assets/shared/desktop/logo.svg"/>
