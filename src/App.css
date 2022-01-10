@@ -200,7 +200,21 @@
 }
 
 .about-headquarters-div-spacing{
-    margin-top: 10%;
+    margin-top: 13%;
+}
+.about-headquarters-row-spacing{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.about-headquarters-col{
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+.about-headquarters-col-img{
+    padding-bottom: 10%;
+}
+.about-headquarters-col-heading{
+    padding-bottom: 1%;
 }
 
 @media screen and (max-width:768px){
@@ -289,6 +303,70 @@
     }
     .howitworks-button-mobile{
         margin-bottom: 15%;
+    }
+
+    /* About Page Styles*/
+    .about-jumbotron-text{
+        padding-top: 4%;
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-bottom: 30%;
+
+    }
+    .about-jumbotron-header{
+        padding-top: 30%;
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    .commitment-div-spacing{
+        margin-top: 30%;
+    }
+    .commitment-row-spacing{
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+
+    .about-quality-div-spacing{
+        margin-top: 70%;
+    }
+    .about-quality-header{
+        margin-top: 50%;
+        margin-left: 0%;
+        margin-bottom: 8%;
+        font-size: 40px;
+    }
+    .about-quality-par{
+        margin-left: 15%;
+        margin-bottom: 13%;
+        margin-right: 15%;
+    }
+    .about-quality-img{
+        margin-top: -170%;
+        margin-right: 3%;
+    }
+    .about-quality-img-rules{
+        height: 250px;
+        width: 425px;
+        object-fit: cover;
+        object-position: 0 100%;
+    }
+
+    .about-headquarters-div-spacing{
+        margin-top: 30%;
+        margin-bottom: 30%;
+    }
+    .about-headquarters-row-spacing{
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    .about-headquarters-col{
+        padding-top: 13%;
+        padding-bottom: 0%;
+    }
+    .headquarters{
+        color: #83888f;
+        font-size: 25px;
     }
 }
 
