@@ -217,6 +217,92 @@
     padding-bottom: 1%;
 }
 
+/* Create plan styles */
+.create-hero-img{
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('/public/assets/plan/desktop/image-hero-blackcup.jpg');
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.create-jumbotron-text{
+    padding-top: 1%;
+    padding-left: 6%;
+    padding-right: 55%;
+    padding-bottom: 10%;
+}
+.create-jumbotron-header{
+    padding-top: 10%;
+    padding-left: 6%;
+    padding-right: 45%;
+}
+
+.create-steps-div{
+    margin-top: 10%;
+    background: #2C343E;
+}
+.create-steps-row{
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.create-accordian-div{
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+.create-accordian-row{
+    padding-right: 7%;
+    padding-left: 7%;
+}
+.create-accordian-options{
+    padding-bottom: 7%;
+    padding-top: 7%;
+    border-bottom: 1px solid #83888F;
+}
+.create-accordion-header{
+    color: #83888F;
+}
+.create-accordion-selection-col{
+    background: #F4F1EB;
+    margin-top: 10%;
+    margin-bottom: 50%;
+    padding-top: 15%;
+    padding-bottom: 30%;
+    padding-left: 10%;
+    border: none;
+    text-align: start;
+}
+.create-accordion-selection-col-header{
+    color: #333d4b;
+    margin-bottom: 10%;
+}
+
+.create-summary{
+    background: #2C343E;
+}
+.create-summary-div{
+    margin-top: 5%;
+}
+.create-summary-col{
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 100%;
+}
+.create-ordersummarytext{
+    margin-bottom: 4%;
+}
+
+.create-button{
+    margin-top: 20%;
+}
+
+
 @media screen and (max-width:768px){
     .App{
         text-align: center;
@@ -386,5 +472,22 @@
         height: 1px;
         background: #fdd6ba;
         margin-top: -5%;
-  }
+    }
+    .dot-create {
+        height: 25px;
+        width: 25px;
+        background-color: none;
+        border-style: solid;
+        border-color: #0E8784;
+        border-radius: 50%;
+        border-width: 2px;
+        display: inline-block;
+    }
+    .h-line-create{
+        width: 100%;
+        height: 1px;
+        background: #fdd6ba;
+        margin-top: -5%;
+        margin-left: 3%;
+    }
 }

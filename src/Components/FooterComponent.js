@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return(
-        <div className="footer container-fluid">
+        <footer className="footer container-fluid">
             <div className='row'>
                 <div className="col-sm-12 col-md footer-row-padding">
                     <img src="assets/shared/desktop/logo.svg" />
@@ -21,7 +21,7 @@ const Footer = () => {
                     <img src="assets/shared/desktop/icon-twitter.svg" className="footer-social-padding"/>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
 
