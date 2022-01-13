@@ -5,6 +5,7 @@
     height: 100%;
 }
 
+
 .button {
     background-color: #0e8784; 
     border-radius: 4px;
@@ -17,6 +18,10 @@
 
 .header{
     margin: 1.5%;
+}
+
+.hidebx{
+    display: none;
 }
 
 .footer {
@@ -272,13 +277,17 @@
     margin-bottom: 50%;
     padding-top: 15%;
     padding-bottom: 30%;
-    padding-left: 10%;
+    padding-left: 6%;
+    padding-right: 2%;
     border: none;
     text-align: start;
 }
 .create-accordion-selection-col-header{
     color: #333d4b;
     margin-bottom: 10%;
+}
+input[type=radio]:checked + .btn {
+    background-color: #0e8784;
 }
 
 .create-summary{

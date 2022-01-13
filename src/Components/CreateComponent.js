@@ -1,38 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import { Accordion } from "react-bootstrap";
 import {OPTIONS} from '../shared/accordionCollection.js';
 
-const RenderAccordionItem = ({option}) => {
+class RenderAccordionItem extends Component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            option: props.option,
+            selectedOption: props.option.optionOne.title
+        };
+        
+        this.onChangeValue = this.onChangeValue.bind(this);
+    }
+
+    onChangeValue = changeEvent => {
+        this.setState({
+            selectedOption: changeEvent.target.value
+        })
+    };
+
+    render(){
     return(
-        <Accordion.Item eventKey={option.key}>
+        <Accordion.Item eventKey={this.props.option.key}>
             <Accordion.Header>
-                <h1 className="create-accordion-header">{option.title}</h1>
+                <h1 className="create-accordion-header">{this.props.option.title}</h1>
             </Accordion.Header>
             <Accordion.Body>
-                <div className="row">
-                    <div className="col-md ">
-                        <button className=" rounded create-accordion-selection-col">
-                            <h3 className=" create-accordion-selection-col-header">{option.optionOne.title}</h3>
-                            <p>{option.optionOne.description}</p>
-                        </button>
+                    <div className="row">
+                        <div className="col-md ">
+                            <input type="radio" name={this.props.option.id} id={this.props.option.optionOne.title} value={this.props.option.optionOne.title} className="hidebx btn-check" checked={this.state.selectedOption === this.props.option.optionOne.title} onChange={this.onChangeValue}/>
+                            <label htmlFor={this.props.option.optionOne.title} className="btn">
+                                <div className=" rounded create-accordion-selection-col">
+                                    <h3 className=" create-accordion-selection-col-header">{this.props.option.optionOne.title}</h3>
+                                    <p>{this.props.option.optionOne.description}</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div className="col-md ">
+                            <input type="radio" name={this.props.option.id} id={this.props.option.optionTwo.title} value={this.props.option.optionTwo.title} className="hidebx btn-check" checked={this.state.selectedOption === this.props.option.optionTwo.title} onChange={this.onChangeValue}/>
+                            <label htmlFor={this.props.option.optionTwo.title} className="btn">
+                                <div className=" rounded create-accordion-selection-col">
+                                    <h3 className=" create-accordion-selection-col-header">{this.props.option.optionTwo.title}</h3>
+                                    <p>{this.props.option.optionTwo.description}</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div className="col-md ">
+                            <input type="radio" name={this.props.option.id} id={this.props.option.optionThree.title} value={this.props.option.optionThree.title} className="hidebx btn-check" checked={this.state.selectedOption === this.props.option.optionThree.title} onChange={this.onChangeValue}/>
+                            <label htmlFor={this.props.option.optionThree.title} className="btn">
+                                <div className=" rounded create-accordion-selection-col">
+                                    <h3 className=" create-accordion-selection-col-header">{this.props.option.optionThree.title}</h3>
+                                    <p>{this.props.option.optionThree.description}</p>
+                                </div>
+                            </label>
+                        </div>
                     </div>
-                    <div className="col-md ">
-                        <button className=" rounded create-accordion-selection-col">
-                            <h3 className=" create-accordion-selection-col-header">{option.optionTwo.title}</h3>
-                            <p>{option.optionTwo.description}</p>
-                        </button>
-                    </div>
-                    <div className="col-md ">
-                        <button className=" rounded create-accordion-selection-col">
-                            <h3 className=" create-accordion-selection-col-header">{option.optionThree.title}</h3>
-                            <p>{option.optionThree.description}</p>
-                        </button>
-                    </div>
-                </div>
             </Accordion.Body>
         </Accordion.Item>
     );
+    }
 }
+
 
 
 const CreateYourPlan = () => {
@@ -114,7 +144,6 @@ const CreateYourPlan = () => {
                             <div className="row create-summary text-white">
                                 <div className="col create-summary-col">
                                     <h6 className="create-ordersummarytext">ORDER SUMMARY</h6>
-                                    <h2>“I drink my coffee as Filter, with a Decaf type of bean. 250g ground ala Cafetiére, sent to me Every Week.”</h2>
                                 </div>
                             </div>
                             <div className=" row gx-0 justify-content-end">
