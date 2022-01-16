@@ -1,73 +1,16 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
 import {OPTIONS} from '../shared/accordionCollection.js';
-
-class RenderAccordionItem extends Component {
-
-    constructor(props){
-        super(props);
-
-        this.state = {
-            option: props.option,
-            selectedOption: props.option.optionOne.title
-        };
-        
-        this.onChangeValue = this.onChangeValue.bind(this);
-    }
-
-    onChangeValue = changeEvent => {
-        this.setState({
-            selectedOption: changeEvent.target.value
-        })
-    };
-
-    render(){
-    return(
-        <Accordion.Item eventKey={this.props.option.key}>
-            <Accordion.Header>
-                <h1 className="create-accordion-header">{this.props.option.title}</h1>
-            </Accordion.Header>
-            <Accordion.Body>
-                    <div className="row">
-                        <div className="col-md ">
-                            <input type="radio" name={this.props.option.id} id={this.props.option.optionOne.title} value={this.props.option.optionOne.title} className="hidebx btn-check" checked={this.state.selectedOption === this.props.option.optionOne.title} onChange={this.onChangeValue}/>
-                            <label htmlFor={this.props.option.optionOne.title} className="btn">
-                                <div className=" rounded create-accordion-selection-col">
-                                    <h3 className=" create-accordion-selection-col-header">{this.props.option.optionOne.title}</h3>
-                                    <p>{this.props.option.optionOne.description}</p>
-                                </div>
-                            </label>
-                        </div>
-                        <div className="col-md ">
-                            <input type="radio" name={this.props.option.id} id={this.props.option.optionTwo.title} value={this.props.option.optionTwo.title} className="hidebx btn-check" checked={this.state.selectedOption === this.props.option.optionTwo.title} onChange={this.onChangeValue}/>
-                            <label htmlFor={this.props.option.optionTwo.title} className="btn">
-                                <div className=" rounded create-accordion-selection-col">
-                                    <h3 className=" create-accordion-selection-col-header">{this.props.option.optionTwo.title}</h3>
-                                    <p>{this.props.option.optionTwo.description}</p>
-                                </div>
-                            </label>
-                        </div>
-                        <div className="col-md ">
-                            <input type="radio" name={this.props.option.id} id={this.props.option.optionThree.title} value={this.props.option.optionThree.title} className="hidebx btn-check" checked={this.state.selectedOption === this.props.option.optionThree.title} onChange={this.onChangeValue}/>
-                            <label htmlFor={this.props.option.optionThree.title} className="btn">
-                                <div className=" rounded create-accordion-selection-col">
-                                    <h3 className=" create-accordion-selection-col-header">{this.props.option.optionThree.title}</h3>
-                                    <p>{this.props.option.optionThree.description}</p>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-            </Accordion.Body>
-        </Accordion.Item>
-    );
-    }
-}
-
-
+import RenderAccordionItem from "./RenderAccordionItem.js";
 
 const CreateYourPlan = () => {
 
-    const [options] = useState(OPTIONS);
+    const [ options ] = useState(OPTIONS);
+    const [ drink, setDrink ] = useState('_____');
+    const [ type, setType ] = useState('_____');
+    const [ quantity, setQuantity ] = useState('_____');
+    const [ grind, setGrind ] = useState('_____');
+    const [ frequency, setFrequency ] = useState('_____')
 
     return(
         <div className=" container">
@@ -134,16 +77,17 @@ const CreateYourPlan = () => {
                     <div className=" col-md">
 
                         <Accordion defaultActiveKey={['']} alwaysOpen flush>
-                            <RenderAccordionItem option={options[0]} />
-                            <RenderAccordionItem option={options[1]} />
-                            <RenderAccordionItem option={options[2]} />
-                            <RenderAccordionItem option={options[3]} />
-                            <RenderAccordionItem option={options[4]} />
+                            <RenderAccordionItem option={options[0]} changeWord={word => setDrink(word)} />
+                            <RenderAccordionItem option={options[1]} changeWord={word => setType(word)} />
+                            <RenderAccordionItem option={options[2]} changeWord={word => setQuantity(word)} />
+                            <RenderAccordionItem option={options[3]} changeWord={word => setGrind(word)} />
+                            <RenderAccordionItem option={options[4]} changeWord={word => setFrequency(word)} />
                         </Accordion>
                         <div className=" container create-summary-div">
                             <div className="row create-summary text-white">
                                 <div className="col create-summary-col">
                                     <h6 className="create-ordersummarytext">ORDER SUMMARY</h6>
+                                    <h2>“I drink my coffee as {drink}, with a {type} type of bean. {quantity} ground ala {grind}, sent to me {frequency}.”</h2>
                                 </div>
                             </div>
                             <div className=" row gx-0 justify-content-end">
