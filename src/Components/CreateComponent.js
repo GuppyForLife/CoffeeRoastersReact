@@ -1,16 +1,39 @@
 import React, { useState } from "react";
-import { Accordion } from "react-bootstrap";
+import { Accordion, ModalBody, ModalFooter, ModalTitle } from "react-bootstrap";
 import {OPTIONS} from '../shared/accordionCollection.js';
 import RenderAccordionItem from "./RenderAccordionItem.js";
+import { Modal } from 'react-bootstrap';
+import ModalHeader from "react-bootstrap/esm/ModalHeader";
 
 const CreateYourPlan = () => {
-
     const [ options ] = useState(OPTIONS);
+
     const [ drink, setDrink ] = useState('_____');
     const [ type, setType ] = useState('_____');
     const [ quantity, setQuantity ] = useState('_____');
     const [ grind, setGrind ] = useState('_____');
-    const [ frequency, setFrequency ] = useState('_____')
+    const [ frequency, setFrequency ] = useState('_____');
+    const [ price , setPrice ] = useState('Select a delivery option')
+
+    const [ show , setShow ] = useState(false);
+    const closeModal = () => setShow(false);
+    const showModal = () => {
+        setShow(true)
+        switch(frequency){
+            case 'Every Week':
+                setPrice('$14.00/mo');
+                break;
+            case 'Every 2 Weeks':
+                setPrice('$17.25/mo');
+                break;
+            case 'Every Month':
+                setPrice('$22.50/mo');
+                break;
+            default:
+                return price;
+        }
+    };
+
 
     return(
         <div className=" container">
@@ -47,7 +70,7 @@ const CreateYourPlan = () => {
             </div>
             <div className=" container-fluid create-accordian-div">
                 <div className="row create-accordian-row">
-                    <div className=" col-md-3">
+                    <div className=" col-md-3 d-none d-md-block">
                         <div className="row create-accordian-options">
                             <div className="col">
                                 <h4>01&nbsp;&nbsp;&nbsp;&nbsp;Preferences</h4>
@@ -75,7 +98,6 @@ const CreateYourPlan = () => {
                         </div>
                     </div>
                     <div className=" col-md">
-
                         <Accordion defaultActiveKey={['']} alwaysOpen flush>
                             <RenderAccordionItem option={options[0]} changeWord={word => setDrink(word)} />
                             <RenderAccordionItem option={options[1]} changeWord={word => setType(word)} />
@@ -84,17 +106,30 @@ const CreateYourPlan = () => {
                             <RenderAccordionItem option={options[4]} changeWord={word => setFrequency(word)} />
                         </Accordion>
                         <div className=" container create-summary-div">
-                            <div className="row create-summary text-white">
+                            <div className="row create-summary text-white rounded">
                                 <div className="col create-summary-col">
                                     <h6 className="create-ordersummarytext">ORDER SUMMARY</h6>
-                                    <h2>“I drink my coffee as {drink}, with a {type} type of bean. {quantity} ground ala {grind}, sent to me {frequency}.”</h2>
+                                    <h2>“I drink my coffee as <span>{drink}</span>, with a <span>{type}</span> type of bean. <span>{quantity}</span> ground ala <span>{grind}</span>, sent to me <span>{frequency}</span>.”</h2>
                                 </div>
                             </div>
                             <div className=" row gx-0 justify-content-end">
-                                <div className="col-3">
-                                <button type="button" className=" button create-button" >Create my plan!</button>
+                                <div className="col-md-3 col-sm">
+                                <button type="button" className=" button create-button" onClick={showModal} >Create my plan!</button>
                                 </div>
                             </div>
+                            <Modal show={show} onHide={closeModal} className=" App">
+                                <ModalHeader className="modalHeader text-white">
+                                    <ModalTitle className=" modalHeaderText"><h1>Order Summary</h1></ModalTitle>
+                                </ModalHeader>
+                                <ModalBody className="modalBody">
+                                    <h3>“I drink my coffee as <span>{drink}</span>, with a <span>{type}</span> type of bean. <span>{quantity}</span> ground ala <span>{grind}</span>, sent to me <span>{frequency}</span>.”</h3>
+                                    <p className="modalBodyCorrect">Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout.</p>
+                                </ModalBody>
+                                <ModalFooter>
+                                    <h2 className=" mx-auto">{price}</h2>
+                                    <button className=" mx-auto button" onClick={closeModal}>Checkout</button>
+                                </ModalFooter>
+                            </Modal>
                         </div>
                     </div>
                 </div>

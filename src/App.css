@@ -5,6 +5,9 @@
     height: 100%;
 }
 
+span{
+    color: #0e8784;
+}
 
 .button {
     background-color: #0e8784; 
@@ -311,6 +314,25 @@ input[type=radio]:checked + .btn {
     margin-top: 20%;
 }
 
+.modalHeader{
+    background-color: #333D4B;
+}
+.modalHeaderText{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+}
+.modalBody{
+    margin-top: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    color: #83888f;
+}
+.modalBodyCorrect{
+    margin-top: 5%;
+}
+
 
 @media screen and (max-width:768px){
     .App{
@@ -462,6 +484,58 @@ input[type=radio]:checked + .btn {
     .headquarters{
         color: #83888f;
         font-size: 25px;
+    }
+
+    /*Create Plan Styles */
+    .create-jumbotron-text{
+        padding-top: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-bottom: 30%;
+    }
+    .create-jumbotron-header{
+        padding-top: 20%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    .create-steps-div{
+        margin-top: 25%;
+        background: #2C343E;
+    }
+    .create-steps-row{
+        padding-left: 7%;
+        padding-right: 7%;
+        padding-top: 7%;
+        padding-bottom: 7%;
+    }
+    .create-accordian-div{
+        margin-top: 25%;
+        margin-bottom: 25%;
+    }
+    .create-accordion-selection-col{
+        background: #F4F1EB;
+        margin-top: 0%;
+        margin-bottom: 0%;
+        padding-top: 8%;
+        padding-bottom: 8%;
+        padding-left: 6%;
+        padding-right: 2%;
+        border: none;
+        text-align: start;
+    }
+    .create-summary-div{
+        margin-top: 30%;
+    }
+    .create-summary-col{
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        margin-top: 100%;
+    }
+    
+    .create-button{
+        margin-top: 15%;
     }
 }
 

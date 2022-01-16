@@ -90,18 +90,18 @@ export const OPTIONS = [
         key: '4',
         optionOne: {
             id: 'EveryWeek',
-            title: 'Every week',
-            description: '$7.20 per shipment. Includes free first-class shipping.'
+            title: 'Every Week',
+            description: '$14.00 per shipment. Includes free first-class shipping.'
         },
         optionTwo: {
             id: 'Every2Weeks',
-            title: 'Every 2 weeks',
-            description: '$9.60 per shipment. Includes free priority shipping.'
+            title: 'Every 2 Weeks',
+            description: '$17.25 per shipment. Includes free priority shipping.'
         },
         optionThree: {
             id: 'EveryMonth',
-            title: 'Every month',
-            description: '$12.00 per shipment. Includes free priority shipping.'
+            title: 'Every Month',
+            description: '$22.50 per shipment. Includes free priority shipping.'
         }
     },
 ]
