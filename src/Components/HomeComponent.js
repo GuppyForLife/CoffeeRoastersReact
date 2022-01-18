@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { Link } from "react-router-dom";
 import { COFFEECOLLECTION } from "../shared/coffeeCollection";
 
 const RenderCoffee = ({coffee}) => {
@@ -21,7 +22,9 @@ const Home = () => {
                 <div className="text-white">
                     <h1 className=" home-jumbotron-header display-1">Great coffee made simple.</h1>
                     <p className="home-jumbotron-text ">Start your mornings with the world's best coffees. Try our expertly curated artisan coffees from our best roasters delivered directly to your door, at your schedule.</p>
-                    <button type="button" className=" button home-jumbotron-button" >Create your plan</button>
+                    <Link to='/create'>
+                        <button type="button" className=" button home-jumbotron-button" >Create your plan</button>
+                    </Link>
                 </div>
             </div>
             <div className=" container-fluid">
@@ -99,7 +102,9 @@ const Home = () => {
                 </div>
                 <div className="row choose-us-card-row howitworks-button-mobile">
                     <div className=" col-md-3">
-                        <button type="button" className="button">Create your plan</button>
+                        <Link to='/create'>
+                            <button type="button" className="button">Create your plan</button>
+                        </Link>
                     </div>
                 </div>
             </div>

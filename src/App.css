@@ -20,7 +20,21 @@ span{
 }
 
 .header{
-    margin: 1.5%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+.footer-link{
+    text-decoration: none;
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.footer-link:hover{ 
+    text-decoration: none;
+    color: white;
+}
+.footer-active{
+    color: #0E8784;
 }
 
 .hidebx{
@@ -304,7 +318,7 @@ input[type=radio]:checked + .btn {
     margin-right: 5%;
     padding-top: 5%;
     padding-bottom: 5%;
-    margin-top: 100%;
+    margin-top: 0%;
 }
 .create-ordersummarytext{
     margin-bottom: 4%;
@@ -341,6 +355,19 @@ input[type=radio]:checked + .btn {
 /* Home Page Styles */
     .header{
         margin: 6%;
+    }
+    .footer-link{
+        text-decoration: none;
+        color: white;
+        margin-left: .5%;
+        margin-right: .5%;
+    }
+    .footer-link:hover{ 
+        text-decoration: none;
+        color: white;
+    }
+    .footer-active{
+        color: #0E8784;
     }
 
     .home-jumbotron-header{
@@ -531,7 +558,7 @@ input[type=radio]:checked + .btn {
         margin-right: 5%;
         padding-top: 5%;
         padding-bottom: 5%;
-        margin-top: 100%;
+        margin-top: 5%;
     }
     
     .create-button{
