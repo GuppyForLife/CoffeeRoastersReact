@@ -1,6 +1,4 @@
-# Frontend Mentor - Coffeeroasters subscription site solution
-
-This is a solution to the [Coffeeroasters subscription site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coffeeroasters-subscription-site-5Fc26HVY6). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+# Coffeeroasters subscription site
 
 ## Table of contents
 
@@ -57,5 +55,4 @@ In future projects I'd like to implement SASS and back end things with node.js a
 ## Author
 
 - Website - [Matthew Jovenal - GitHUb](https://github.com/GuppyForLife)
-- Frontend Mentor - [GuppyForLife](https://www.frontendmentor.io/profile/GuppyForLife)
 - Twitter - [@YoursTruly_Matt](https://twitter.com/YoursTruly_Matt)
